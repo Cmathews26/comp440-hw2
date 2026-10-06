@@ -51,8 +51,8 @@ each part worked.
 
 1. Claude checks that it has the Colab tools. (You can check too: type `/mcp`, and
    `cool-colab-mcp` should say "connected".)
-2. It connects to Colab. A Colab notebook opens in your browser. Approve the connection when it
-   asks.
+2. It opens the HW2 notebook in Colab. The notebook is `colab/hw2.ipynb` in your repository, and
+   Claude loads it into a Colab tab in your browser. Approve the connection when it asks.
 3. It asks you to choose **Runtime > Change runtime type > T4 GPU** in Colab's menu. Don't pick
    the TPU, even though it sounds faster. The training code in this assignment is built for
    NVIDIA GPUs like the T4.

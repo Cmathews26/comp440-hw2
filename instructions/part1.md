@@ -30,22 +30,19 @@ say about it.
 - Find the number of parameters, the number of layers, and how much text the model was trained
   on, in how many languages.
 
+Questions: The page says the model's "Training Stage" is "Pretraining". What do you expect it to
+do when you ask it a question? You'll find out in Steps 2 and 5.
+
 ## Step 2: See what the model predicts next
 
 A base model does one thing: given some text, it gives a probability for every possible next
 token. Everything else is built on that.
 
-- Ask Claude Code to run the cell below in your Colab notebook. Read it, but don't worry about
-  every line.
+- Ask Claude Code to run the three setup cells at the top of your Colab notebook, if it hasn't
+  already, and then the "Step 2" cell. The setup cells check the GPU, download the test items
+  and load the model. Read the Step 2 cell, but don't worry about every line.
 
 ```python
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-name = "Qwen/Qwen3-0.6B-Base"
-tok = AutoTokenizer.from_pretrained(name)
-model = AutoModelForCausalLM.from_pretrained(name, torch_dtype=torch.float16).to("cuda")
-
 def top_next_tokens(text, k=5):
     """Print the k most likely next tokens after text, with their probabilities."""
     ids = tok(text, return_tensors="pt").to("cuda")
@@ -59,14 +56,18 @@ def top_next_tokens(text, k=5):
 top_next_tokens("Question: Which city is the capital of Canada?\nAnswer:")
 ```
 
-- You should see output like this:
+- You should see this output:
 
 ```
-[TBD: expected output, from a run on a T4]
+0.292  ' The'
+0.061  ' In'
+0.058  ' Ottawa'
+0.057  ' the'
+0.028  ' Toronto'
 ```
 
-- Run it two more times with prompts you change: drop `Answer:`, and then write the question
-  as the start of a sentence ("The capital of Canada is").
+- Ask Claude to run it two more times with prompts you change: drop `Answer:`, and then write
+  the question as the start of a sentence ("The capital of Canada is").
 - Hint: the spaces at the start of tokens like `' Ottawa'` are part of the token.
 
 Questions: How confident is the model? Did the format of the prompt change the answer or only
@@ -105,10 +106,15 @@ on everyone's models at the end of the assignment.
 
 ## Step 5: Run the evaluations on the base model
 
-- [TBD: how to run the Colab script on the three shared sets and download the answers as one
-  zip file. To be written with the script.]
-- Ask Claude Code to make a run from the answers and grade it with Sonnet.
+- Ask Claude Code to run the notebook's three setup cells, if it hasn't already, and then the
+  three "Step 5" cells. They answer all 240 test questions with the base model. This takes about
+  a minute on a T4.
+- The last Step 5 cell downloads the answers as one file, `hw2-base-answers.zip`. Chrome asks
+  for permission the first time; allow it.
+- Ask Claude Code to make a run from the zip file and grade it with Sonnet.
 - Open the run in the viewer.
+- Hint: if your laptop slept and Colab disconnected, ask Claude to reopen the notebook and choose
+  the T4 again. A reconnect starts fresh, so the setup cells need to run again.
 
 ## Step 6: Trace one question through your run
 
@@ -139,8 +145,10 @@ diagram?
 
 Every grader makes mistakes, Claude included. In this step you'll measure how often.
 
-- Ask Claude Code to pick 10 graded answers at random and show you only the question and the
-  answer, not the grade. Mix the three sets.
+- Ask Claude Code to pick 10 graded answers at random from the short facts and the "user says
+  something wrong" sets, and to show you only the question and the answer, not the grade. Leave
+  out the emotional and social set for now: its main test compares two models side by side, and
+  you only have one so far.
 - Grade each one yourself and write your grades down.
 - Then ask Claude to show its grades.
 - Hint: grading before you see Claude's grade matters. Once you have seen it, it is hard not to
@@ -179,8 +187,9 @@ Submit your repository URL through the
   come with reasons.
 - Checking Claude: [TBD]% - Your 10 grades were made before you saw Claude's, and you explain
   one disagreement.
-- Interpretation: [TBD]% - The surprising answers come with your own explanation of where they
-  came from.
+- Interpretation: [TBD]% - Your answers to the questions in Steps 2, 4 and 8 are your own reading
+  of what you saw, and the surprising answers come with your own explanation of where they came
+  from.
 
 ## FAQ
 

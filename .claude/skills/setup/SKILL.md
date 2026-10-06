@@ -16,12 +16,16 @@ plain words what it means and what to change, and stop there.
    failed: check that `uv --version` works and that
    `uv sync --frozen --directory tools/cool-colab-mcp` succeeds, then restart Claude Code. Stop
    here until the tools are there.
-3. Call `open_colab_browser_connection`. Tell them a Colab notebook is opening in their browser
-   and that they should approve the connection there. Wait until it reports a connection.
+3. Load the HW2 notebook into Colab. Call `register_notebook` with `notebook_id` "hw2", `name`
+   "COMP 440 HW2" and `local_path` set to the absolute path of `colab/hw2.ipynb` in this
+   repository. Then call `open_notebook` with "hw2". Tell them a Colab tab is opening with the
+   HW2 notebook in it, and that they should approve the connection there. Wait until it reports
+   a connection. If registering fails because local notebooks are disabled, Claude Code was
+   started before `.mcp.json` allowed the `colab/` folder: ask them to restart Claude Code.
 4. Ask them to choose Runtime > Change runtime type > T4 GPU in Colab's menu, not the TPU, and to
-   say when it is done. Then call `get_runtime_status`. If it does not report a T4 GPU, say what
-   it reports and ask again. Tell them the small cell it added at the top of the notebook comes
-   from the server and is harmless.
+   say when it is done. Then call `get_runtime_status` with `notebook_id` "hw2". If it does not
+   report a T4 GPU, say what it reports and ask again. Tell them the small cell it added at the
+   top of the notebook comes from the server and is harmless.
 5. Ask their name, and fill `**Name:**` and `**Date:**` at the top of `WRITEUP.md`. Those two
    are yours to compose; every other slot in that file you fill from their own words.
 6. Run `python3 dump_transcript.py`, then commit `WRITEUP.md` as `Name and date`.

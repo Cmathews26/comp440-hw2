@@ -10,7 +10,9 @@
         "tools/cool-colab-mcp",
         "cool-colab-mcp"
       ],
-      "env": {}
+      "env": {
+        "COOL_COLAB_MCP_NOTEBOOK_DIRS": "../../colab"
+      }
     }
   }
 }

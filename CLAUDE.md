@@ -56,7 +56,8 @@ write their answer in, show the slot as it now reads, and stop.
   (the writing rules above apply).
 
 - **Step 1, reading about the model.** Let them find the facts on the page. Check them once
-  they give them.
+  they give them. The prediction about how it will answer is theirs: don't hint at what the
+  base model does.
 - **Step 2, the next-token cell.** Run the cell and the prompts they choose, and show the output
   in full. Don't say what it means; that is the question they answer.
 - **Step 3, the four answers.** Get their four grades, with a reason for each, into the slot
@@ -64,7 +65,8 @@ write their answer in, show the slot as it now reads, and stop.
   `evals/shared/README.md` and show where you differ, without saying who is right.
 - **Step 6, the trace.** They find the files and draw the diagram. Answer questions about any
   step, and tell them to check your answer against the files. Don't list the files for them.
-- **Step 7, checking Claude's grades.** Pick 10 graded answers at random across the three sets.
+- **Step 7, checking Claude's grades.** Pick 10 graded answers at random from the facts and user-says-something-wrong sets, not the
+  emotional and social set.
   Show each one's question and answer only: never its grade, its reason or any hint of either.
   Write their 10 grades into the slot. Only then show Claude's grades next to theirs.
 - **Step 8, surprising answers.** They choose the answers. Don't point them to examples.
@@ -73,18 +75,27 @@ write their answer in, show the slot as it now reads, and stop.
 
 ## Colab
 
+- The notebook is `colab/hw2.ipynb`, registered with the Colab server as `notebook_id` "hw2"
+  (the `setup` skill does this). Always pass `notebook_id` "hw2". To reopen it, call
+  `open_notebook` with "hw2": it loads the file from the repository into a fresh Colab tab.
+- `colab/hw2.ipynb` is the same for everyone. Never call `sync_notebook_to_local`, which would
+  overwrite it with the tab's cells. Cells you add for a student live only in the tab.
+- When a template update changes `colab/hw2.ipynb`, ask before calling `sync_notebook_to_colab`:
+  it replaces the tab's cells with the file, so cells added in the tab are lost.
 - Ask before any step that deletes, overwrites or restores a notebook or snapshot, or that
   changes the runtime. Some of the Colab tools describe checks that you should confirm yourself;
   never confirm one on their behalf. Ask them.
-- If a tool says there is no live Colab connection, the laptop probably went to sleep. Reconnect,
-  then ask them to choose the T4 again, since a reconnect opens a new notebook on a CPU.
+- If a tool says there is no live Colab connection, the laptop probably went to sleep. Call
+  `open_notebook` with "hw2", ask them to choose the T4 again, and rerun the setup cells: a
+  reconnect starts a new runtime, so the model and files in `/content` are gone.
 
 ## Files
 
 - **Never edit `TRANSCRIPT.md`.** `dump_transcript.py` writes it. Run `python3 dump_transcript.py`
   before every commit you make. If it fails on their machine, say so and go on.
 - **Some files are the same for everyone and are not edited:** `TRANSCRIPT.md`,
-  `dump_transcript.py`, everything in `evals/shared/`, `evals/app/` and `tools/`, and
+  `dump_transcript.py`, `colab/hw2.ipynb`, everything in `evals/shared/`, `evals/app/` and
+  `tools/`, and
   `.claude/agents/` and `.claude/skills/`. Say what you would change and why instead.
 - At the end of each part, run the `checkpoint` skill.
 

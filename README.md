@@ -46,12 +46,12 @@ the class's [AI-use norms](https://docs.google.com/document/d/1Eb6qxeS2wy-9TBzL8
 - **Claude says it has no Colab tools.** You probably skipped the approval in [Step 0](instructions/step0.md). Run
   `claude mcp reset-project-choices`, restart Claude Code and approve the server.
 - **Claude says the notebook has no live Colab connection.** This usually means your laptop went
-  to sleep. Ask Claude to reconnect. A reconnect opens a new notebook on a CPU, so choose the T4
-  again and rerun any setup cells. Keep your laptop awake and plugged in while you
-  train.
+  to sleep. Ask Claude to reopen the notebook. A reconnect starts a new runtime on a CPU, so
+  choose the T4 again and have Claude rerun the setup cells. Keep your laptop awake and plugged in
+  while you train.
 - **A download doesn't arrive.** Chrome asks for permission the first time a notebook downloads
   a file. Look for the prompt near the address bar and allow it.
-- **"CUDA out of memory".** Restart the kernel in the collab notebook and try again
+- **"CUDA out of memory".** Restart the kernel in the Colab notebook and try again.
 
 ## What to submit
 
