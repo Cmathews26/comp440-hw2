@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "cool-colab-mcp": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--frozen",
+        "--directory",
+        "tools/cool-colab-mcp",
+        "cool-colab-mcp"
+      ],
+      "env": {}
+    }
+  }
+}
