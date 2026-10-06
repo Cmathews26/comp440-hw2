@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git log:*)",
+      "Bash(git status:*)",
+      "Bash(git show:*)",
+      "Bash(git remote:*)",
+      "Bash(git fetch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(ls:*)",
+      "Bash(python3 dump_transcript.py)",
+      "Bash(python3 evals/app/serve.py:*)",
+      "Bash(git merge:*)",
+      "Bash(python3 evals/shared/grade_tools.py:*)"
+    ]
+  }
+}
