@@ -24,7 +24,7 @@ your repository from one part to the next.
 |---|---|---|
 | [Step 0: Set up](instructions/step0.md) | Get the repository, connect Claude Code to Colab and start the evaluation viewer | 8:00am Thursday, October 8 |
 | [Part 1: The tools and the tests](instructions/part1.md) | Learn how the pieces connect, how the model and the tests are built, and run the tests on the base model | 8:00am Thursday, October 15 |
-| [Part 2: Train your two models and decide what changed](instructions/part2.md) | Write your two charters and two test families, predict the results, train on example answers (SFT) and on preferences (DPO), then grade, audit and write up whose preferences count | [TBD: date] |
+| [Part 2: Train your two models and decide what changed](instructions/part2.md) | Write your two charters and two test families, predict the results, train on example answers (SFT) and on preferences (DPO), then grade, audit and write up whose preferences count | 8:00am Tuesday, October 27 |
 
 ## Working independently
 

@@ -2,7 +2,7 @@
 
 <!-- Draft: step headings only, until Shilad approves them. -->
 
-Due [TBD: date]. The overall instructions are in the [README](../README.md).
+Due **8:00am Tuesday, October 27**. The overall instructions are in the [README](../README.md).
 
 ## Step 1: Pick your famous person
 
