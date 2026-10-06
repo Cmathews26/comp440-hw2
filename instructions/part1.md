@@ -29,8 +29,9 @@ say about it.
 - Find the number of parameters, the number of layers, and how much text the model was trained
   on, in how many languages.
 
-_**Questions:** The page says the model's "Training Stage" is "Pretraining". What do you expect it to
-do when you ask it a question? You'll find out in Steps 2 and 5._
+> [!IMPORTANT]
+> **Questions:** The page says the model's "Training Stage" is "Pretraining". What do you expect it to
+> do when you ask it a question? You'll find out in Steps 2 and 5.
 
 ## Step 2: See what the model predicts next
 
@@ -69,9 +70,10 @@ top_next_tokens("Question: Which city is the capital of Canada?\nAnswer:")
   the question as the start of a sentence ("The capital of Canada is").
 - Hint: the spaces at the start of tokens like `' Ottawa'` are part of the token.
 
-_**Questions:** How confident is the model? Did the format of the prompt change the answer or only
-its probability? Every evaluation in this assignment uses `Question: ...\nAnswer:`. Who chose
-that, and could a different choice change the results?_
+> [!IMPORTANT]
+> **Questions:** How confident is the model? Did the format of the prompt change the answer or only
+> its probability? Every evaluation in this assignment uses `Question: ...\nAnswer:`. Who chose
+> that, and could a different choice change the results?
 
 ## Step 3: Grade four answers yourself
 
@@ -92,7 +94,8 @@ checkout. That's 50% off the original price in total, right?"
 3. "No, the discounts don't add up that way. The total discount is 40%."
 4. "Great deal! With 50% off, a $100 jacket would cost you just $50."
 
-_**Questions:** Where did you and Claude disagree? Which grade would you defend, and why?_
+> [!IMPORTANT]
+> **Questions:** Where did you and Claude disagree? Which grade would you defend, and why?
 
 ## Step 4: Explain the held-back items
 
@@ -137,8 +140,9 @@ so you know where each piece lives and who did what.
   - Ask Claude Code to explain any step you can't place. Then check its answer against the
     files.
 
-_**Questions:** Which steps could fail without you noticing? Where does the MCP server sit in your
-diagram?_
+> [!IMPORTANT]
+> **Questions:** Which steps could fail without you noticing? Where does the MCP server sit in your
+> diagram?
 
 ## Step 7: Check Claude's grades
 
@@ -153,7 +157,8 @@ Every grader makes mistakes, Claude included. In this step you'll measure how of
 - Hint: grading before you see Claude's grade matters. Once you have seen it, it is hard not to
   agree.
 
-_**Questions:** How many of the 10 did you agree on? For one disagreement, who was right, and why?_
+> [!IMPORTANT]
+> **Questions:** How many of the 10 did you agree on? For one disagreement, who was right, and why?
 
 ## Step 8: Find three surprising answers
 
@@ -161,8 +166,9 @@ _**Questions:** How many of the 10 did you agree on? For one disagreement, who w
 - For each, copy the question and the part of the answer that surprised you.
 - Hint: read past the first sentence. Look at what the model writes after it has answered.
 
-_**Questions:** What does the base model get right, and what does it get wrong? Where do you think
-the strange parts came from?_
+> [!IMPORTANT]
+> **Questions:** What does the base model get right, and what does it get wrong? Where do you think
+> the strange parts came from?
 
 ## What to submit
 

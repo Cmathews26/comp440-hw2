@@ -48,7 +48,8 @@ Once the MCP server is connected, Claude asks you to do this step.
 - Hint: tell Claude your answers and it writes them into `WRITEUP.md`. It may tidy your wording,
   but the ideas will be yours.
 
-_**Question:** Why not just paste code into Colab yourself?_
+> [!IMPORTANT]
+> **Question:** Why not just paste code into Colab yourself?
 
 ## Step C: Let Claude connect Colab
 
@@ -64,9 +65,10 @@ Claude does most of this step. You click a few things in your Chrome browser.
 
 ## Step D: Explain how it connects
 
-_**Question:** Now that you've seen it work, how does the MCP server connect Claude Code on your
-laptop to a notebook running on Google's computer? Claude asks for your answer at the end of
-setup._
+> [!IMPORTANT]
+> **Question:** Now that you've seen it work, how does the MCP server connect Claude Code on your
+> laptop to a notebook running on Google's computer? Claude asks for your answer at the end of
+> setup.
 
 ## What to submit
 
