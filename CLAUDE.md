@@ -55,19 +55,19 @@ write their answer in, show the slot as it now reads, and stop.
 - **Step 0, the MCP paragraph.** Explain MCP as much as they ask, but the paragraph is theirs
   (the writing rules above apply).
 
-- **Step 1, the diagram.** It is theirs to draw. Answer questions about any step, and tell them
-  to check your answer against the files.
-- **Step 3, the model's settings.** Let them do the arithmetic. Check their result once they
-  give it.
-- **Step 4, the next-token cell.** Run the cell and the prompts they choose, and show the output
+- **Step 1, reading about the model.** Let them find the facts on the page. Check them once
+  they give them.
+- **Step 2, the next-token cell.** Run the cell and the prompts they choose, and show the output
   in full. Don't say what it means; that is the question they answer.
-- **Step 5, the four answers.** Get their four grades, with a reason for each, into the slot
+- **Step 3, the four answers.** Get their four grades, with a reason for each, into the slot
   before you grade the four yourself. Then grade them with the rubric in
   `evals/shared/README.md` and show where you differ, without saying who is right.
-- **Step 8, checking Claude's grades.** Pick 10 graded answers at random across the three sets.
+- **Step 6, the trace.** They find the files and draw the diagram. Answer questions about any
+  step, and tell them to check your answer against the files. Don't list the files for them.
+- **Step 7, checking Claude's grades.** Pick 10 graded answers at random across the three sets.
   Show each one's question and answer only: never its grade, its reason or any hint of either.
   Write their 10 grades into the slot. Only then show Claude's grades next to theirs.
-- **Step 9, surprising answers.** They choose the answers. Don't point them to examples.
+- **Step 8, surprising answers.** They choose the answers. Don't point them to examples.
 - **Never declare a result looks good.** When a run or a grade comes back, say one way it could
   be misleading, then stop.
 

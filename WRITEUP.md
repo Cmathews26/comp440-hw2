@@ -11,39 +11,35 @@ XXXX
 
 ## Part 1: The tools and the tests
 
-### Step 1: Your diagram
-
-XXXX (add the image to the repository and link it here)
-
-### Step 2: Where things live
+### Step 1: About the model
 
 XXXX
 
-### Step 3: The model's settings
+### Step 2: What the model predicts next
 
 XXXX
 
-### Step 4: What the model predicts next
+### Step 3: Your four grades
 
 XXXX
 
-### Step 5: Your four grades
+### Step 4: The held-back items
 
 XXXX
 
-### Step 6: The held-back items
+### Step 5: Your run folder
 
 XXXX
 
-### Step 7: Your run folder
+### Step 6: One question traced, and your diagram
+
+XXXX (add the diagram image to the repository and link it here)
+
+### Step 7: Your 10 grades and Claude's
 
 XXXX
 
-### Step 8: Your 10 grades and Claude's
-
-XXXX
-
-### Step 9: Three surprising answers
+### Step 8: Three surprising answers
 
 XXXX
 

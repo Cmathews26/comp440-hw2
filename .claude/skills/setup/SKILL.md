@@ -36,4 +36,4 @@ plain words what it means and what to change, and stop there.
 
 Then remind them to submit their repository URL through the form
 (https://forms.gle/mgKcnqzTGxNaGvteA) by 8:00am Thursday, October 8, and say that Part 1 Step 1,
-the diagram, is next.
+reading about the model, is next.

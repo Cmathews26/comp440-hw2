@@ -3,11 +3,11 @@
 This first part is about the tools and the tests, before any training happens. In this part
 you will:
 
-- Understand how the pieces of this assignment connect: your laptop, Claude Code, a Google
-  Colab notebook and the evaluation viewer.
 - Understand how the model you will train is built and what it does with a prompt.
 - Understand how the shared evaluation sets are built and graded.
-- Run the evaluations on the untrained "base" model and check Claude's grades yourself.
+- Run the evaluations on the untrained "base" model, and trace how the pieces connect: your
+  laptop, Claude Code, a Google Colab notebook and the evaluation viewer.
+- Check Claude's grades yourself.
 
 Part 2 builds on this one. You will train the model and run these same evaluations again, so
 keep your repository and your base-model run. Your base-model results are what you will compare
@@ -19,53 +19,18 @@ The overall instructions, the partner policy and the resources are in the
 Before you start, finish [Step 0](step0.md): it sets up the repository, connects Claude Code to
 Colab and starts the viewer.
 
-## Step 1: Trace one question from start to finish
-
-Pick one question from `evals/shared/facts.jsonl`. Before you run anything, I would like you to
-understand the path it will take.
-
-- Draw a diagram of the path the question takes: from the item file, to Colab, to the model's
-  answer, to the zip file you download, to a run folder on your laptop, to Claude's grade, to
-  the viewer.
-- Label each box with where it runs: your laptop or Google's computer.
-- Mark each step that Claude Code does for you.
-- Hints:
-  - Hand-drawn and photographed is fine.
-  - `evals/runs/README.md` describes the run folder.
-  - Ask Claude Code to explain any step you can't place. Then check its answer against the
-    files.
-
-Questions: Which steps could fail without you noticing? Where does the MCP server sit in your
-diagram?
-
-## Step 2: Find where things live
-
-This should take about five minutes. Answer each question with a file path and one sentence.
-
-- Which file holds the rules Claude follows when it grades?
-- Which Claude model does the grading?
-- Where does the viewer save the grades you give on its Review page?
-- Where are the shared evaluation sets?
-
-## Step 3: Read the model's settings
+## Step 1: Read about the model
 
 The model you will train is called "0.6B" because it has about 0.6 billion numbers in it, often
-called *parameters* or *weights*. Training changes them. In this step you'll find where those
-numbers sit.
+called *parameters* or *weights*. Training changes them. In this step you'll read what its makers
+say about it.
 
-- Open the model's [settings file](https://huggingface.co/Qwen/Qwen3-0.6B-Base/blob/main/config.json).
-- Find the number of layers (`num_hidden_layers`), the size of the vocabulary (`vocab_size`)
-  and the length of the vector the model uses for each token (`hidden_size`).
-- The model starts by looking up each token in a table with one row per vocabulary entry and
-  one column per number in that vector. Calculate how many numbers this table holds.
-- The whole model has 596,049,920 parameters. Calculate what percentage of them are in that
-  table.
-- Hint: you should get a table of about 156 million numbers.
+- Open the model's [Hugging Face page](https://huggingface.co/Qwen/Qwen3-0.6B-Base) and read the
+  "Model Overview" and the highlights above it.
+- Find the number of parameters, the number of layers, and how much text the model was trained
+  on, in how many languages.
 
-Questions: Does the share of the model in that one table surprise you? Why might a model need
-such a large vocabulary?
-
-## Step 4: See what the model predicts next
+## Step 2: See what the model predicts next
 
 A base model does one thing: given some text, it gives a probability for every possible next
 token. Everything else is built on that.
@@ -108,7 +73,7 @@ Questions: How confident is the model? Did the format of the prompt change the a
 its probability? Every evaluation in this assignment uses `Question: ...\nAnswer:`. Who chose
 that, and could a different choice change the results?
 
-## Step 5: Grade four answers yourself
+## Step 3: Grade four answers yourself
 
 Claude will grade thousands of answers for you. Before it does, I'd like you to grade a few
 yourself, so you know what its grades mean.
@@ -129,23 +94,48 @@ checkout. That's 50% off the original price in total, right?"
 
 Questions: Where did you and Claude disagree? Which grade would you defend, and why?
 
-## Step 6: Explain the held-back items
+## Step 4: Explain the held-back items
 
 Shilad also has more test items of the same three kinds that you will not see. They will be run
 on everyone's models at the end of the assignment.
 
-- In two or three sentences, explain why they exist.
+- In two or three sentences, explain why some tests are held back.
 - Describe one way your results on the visible items could look better than your model really
   is.
 
-## Step 7: Run the evaluations on the base model
+## Step 5: Run the evaluations on the base model
 
 - [TBD: how to run the Colab script on the three shared sets and download the answers as one
   zip file. To be written with the script.]
 - Ask Claude Code to make a run from the answers and grade it with Sonnet.
 - Open the run in the viewer.
 
-## Step 8: Check Claude's grades
+## Step 6: Trace one question through your run
+
+Now that you've run the evaluations, I'd like you to follow one question all the way through,
+so you know where each piece lives and who did what.
+
+- Pick one question from `evals/shared/facts.jsonl` and note its `id`.
+- Find it at each stage, and write down the file it's in:
+  - the question itself, with the answer Claude was told to accept;
+  - the base model's answer, in your run folder's `responses/` folder;
+  - Claude's grade and its reason, in your run folder's `grades/` folder;
+  - the rules Claude followed when it graded, and which Claude model did the grading;
+  - the same question in the viewer.
+- Draw a diagram of the path the question took: from the item file, to Colab, to the model's
+  answer, to the zip file you downloaded, to the run folder, to Claude's grade, to the viewer.
+- Label each box with where it ran: your laptop or Google's computer. Mark each step that Claude
+  Code did for you.
+- Hints:
+  - Hand-drawn and photographed is fine.
+  - `evals/runs/README.md` describes the run folder. The grading rules are in `.claude/agents/`.
+  - Ask Claude Code to explain any step you can't place. Then check its answer against the
+    files.
+
+Questions: Which steps could fail without you noticing? Where does the MCP server sit in your
+diagram?
+
+## Step 7: Check Claude's grades
 
 Every grader makes mistakes, Claude included. In this step you'll measure how often.
 
@@ -158,7 +148,7 @@ Every grader makes mistakes, Claude included. In this step you'll measure how of
 
 Questions: How many of the 10 did you agree on? For one disagreement, who was right, and why?
 
-## Step 9: Find three surprising answers
+## Step 8: Find three surprising answers
 
 - Browse the answers in the viewer and pick **at least three** that surprise you.
 - For each, copy the question and the part of the answer that surprised you.
@@ -172,20 +162,20 @@ the strange parts came from?
 Your answers go in `WRITEUP.md`, which has a section for each step. At a minimum I am looking
 for:
 
-- your diagram from Step 1;
-- your answers to the questions in Steps 2 to 6;
-- your run folder from Step 7;
-- your 10 grades and the comparison from Step 8;
-- your three answers from Step 9.
+- your answers for Steps 1 to 4;
+- your run folder from Step 5;
+- your file list and diagram from Step 6;
+- your 10 grades and the comparison from Step 7;
+- your three answers from Step 8.
 
 Submit your repository URL through the
 [assignment submission form](https://forms.gle/mgKcnqzTGxNaGvteA) by **8:00am on Thursday, October 15**.
 
 ## Grading rubric
 
-- Diagram: [TBD]% - Every step in your diagram is placed on your laptop or Google's computer, and the steps
-  Claude does are marked.
-- Model and grading: [TBD]% - The numbers in Steps 3 and 4 are right, and the grades in Step 5
+- Trace: [TBD]% - Every file in Step 6 is the right one. Every step in your diagram is placed on
+  your laptop or Google's computer, and the steps Claude did are marked.
+- Model and grading: [TBD]% - The facts you found in Step 1 are right, and the grades in Step 3
   come with reasons.
 - Checking Claude: [TBD]% - Your 10 grades were made before you saw Claude's, and you explain
   one disagreement.
