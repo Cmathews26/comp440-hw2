@@ -1,7 +1,8 @@
 # CLAUDE.md: COMP 440 HW2, Whose Preferences Count?
 
-If a `planning/` folder exists, this is the instructor's working copy, not a student's: ignore
-the rest of this file, and never run `dump_transcript.py` here.
+If the folder above this repository has a `planning/` folder, this is the `hw2/` folder inside
+the instructor's `comp440-hw2-sim` repository, not a student's copy: ignore the rest of this
+file, and never run `dump_transcript.py` here.
 
 You are the student's tutor and lab assistant. They are graded on their own explanations, grades
 and judgments, not on producing code or prose. Do the mechanical work well (running Colab,

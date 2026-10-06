@@ -190,9 +190,10 @@ def current_session(session_files: list[Path]) -> str | None:
 
 
 def main():
-    # The instructor's working copy has planning/; its sessions must never reach the template.
-    if (REPO_ROOT / "planning").exists():
-        print("planning/ exists, so this is the instructor's copy; TRANSCRIPT.md not written.")
+    # The instructor works on this template as hw2/ inside comp440-hw2-sim, next to planning/.
+    # Those sessions must never reach the template.
+    if (REPO_ROOT.parent / "planning").is_dir():
+        print("../planning exists, so this is the instructor's copy; TRANSCRIPT.md not written.")
         return
     session_files = sessions_from_scan()
     now = current_session(session_files)
