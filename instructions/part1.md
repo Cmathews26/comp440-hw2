@@ -1,22 +1,21 @@
 # COMP 440 HW2 Part 1: The tools and the tests
 
-This first part is about the tools and the tests, before any training happens. In this part
-you will:
+Now that you have your LLM development machinery setup, you will use it to evaluate the untrained base model. In particular, you will:
 
-- Understand how the model you will train is built and what it does with a prompt.
+- Understand how the model you will train is built and how it responds to a prompt.
 - Understand how the shared evaluation sets are built and graded.
 - Run the evaluations on the untrained "base" model, and trace how the pieces connect: your
   laptop, Claude Code, a Google Colab notebook and the evaluation viewer.
 - Check Claude's grades yourself.
 
-Part 2 builds on this one. You will train the model and run these same evaluations again, so
+[Part 2](part2.md) builds on this one. You will train the model and run these same evaluations again, so
 keep your repository and your base-model run. Your base-model results are what you will compare
 against.
 
 The overall instructions, the partner policy and the resources are in the
 [README](../README.md).
 
-Before you start, finish [Step 0](step0.md): it sets up the repository, connects Claude Code to
+Before you start, finish [Part 0](part0.md): it sets up the repository, connects Claude Code to
 Colab and starts the viewer.
 
 ## Step 1: Read about the model
@@ -30,8 +29,8 @@ say about it.
 - Find the number of parameters, the number of layers, and how much text the model was trained
   on, in how many languages.
 
-Questions: The page says the model's "Training Stage" is "Pretraining". What do you expect it to
-do when you ask it a question? You'll find out in Steps 2 and 5.
+_**Questions:** The page says the model's "Training Stage" is "Pretraining". What do you expect it to
+do when you ask it a question? You'll find out in Steps 2 and 5._
 
 ## Step 2: See what the model predicts next
 
@@ -70,9 +69,9 @@ top_next_tokens("Question: Which city is the capital of Canada?\nAnswer:")
   the question as the start of a sentence ("The capital of Canada is").
 - Hint: the spaces at the start of tokens like `' Ottawa'` are part of the token.
 
-Questions: How confident is the model? Did the format of the prompt change the answer or only
+_**Questions:** How confident is the model? Did the format of the prompt change the answer or only
 its probability? Every evaluation in this assignment uses `Question: ...\nAnswer:`. Who chose
-that, and could a different choice change the results?
+that, and could a different choice change the results?_
 
 ## Step 3: Grade four answers yourself
 
@@ -93,7 +92,7 @@ checkout. That's 50% off the original price in total, right?"
 3. "No, the discounts don't add up that way. The total discount is 40%."
 4. "Great deal! With 50% off, a $100 jacket would cost you just $50."
 
-Questions: Where did you and Claude disagree? Which grade would you defend, and why?
+_**Questions:** Where did you and Claude disagree? Which grade would you defend, and why?_
 
 ## Step 4: Explain the held-back items
 
@@ -138,8 +137,8 @@ so you know where each piece lives and who did what.
   - Ask Claude Code to explain any step you can't place. Then check its answer against the
     files.
 
-Questions: Which steps could fail without you noticing? Where does the MCP server sit in your
-diagram?
+_**Questions:** Which steps could fail without you noticing? Where does the MCP server sit in your
+diagram?_
 
 ## Step 7: Check Claude's grades
 
@@ -154,7 +153,7 @@ Every grader makes mistakes, Claude included. In this step you'll measure how of
 - Hint: grading before you see Claude's grade matters. Once you have seen it, it is hard not to
   agree.
 
-Questions: How many of the 10 did you agree on? For one disagreement, who was right, and why?
+_**Questions:** How many of the 10 did you agree on? For one disagreement, who was right, and why?_
 
 ## Step 8: Find three surprising answers
 
@@ -162,8 +161,8 @@ Questions: How many of the 10 did you agree on? For one disagreement, who was ri
 - For each, copy the question and the part of the answer that surprised you.
 - Hint: read past the first sentence. Look at what the model writes after it has answered.
 
-Questions: What does the base model get right, and what does it get wrong? Where do you think
-the strange parts came from?
+_**Questions:** What does the base model get right, and what does it get wrong? Where do you think
+the strange parts came from?_
 
 ## What to submit
 
@@ -177,7 +176,7 @@ for:
 - your three answers from Step 8.
 
 Submit your repository URL through the
-[assignment submission form](https://forms.gle/mgKcnqzTGxNaGvteA) by **8:00am on Thursday, October 15**.
+[assignment submission form](https://forms.gle/mgKcnqzTGxNaGvteA) by **8:00am on Thursday, October 15**. Then go on to [Part 2](part2.md).
 
 ## Grading rubric
 

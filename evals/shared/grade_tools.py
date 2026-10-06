@@ -1429,7 +1429,7 @@ def cmd_init_run(args):
     }
     if any(not m.get("description") for m in models):
         run["next_steps"].append("Describe each model in run.json (how it was trained, which "
-                                 "charter), or ask Claude to fill it in.")
+                                 "constitution), or ask Claude to fill it in.")
     R.save_run(run_dir, run)
     with open(os.path.join(run_dir, "notes.md"), "w", encoding="utf-8") as f:
         f.write(f"# {args.title}\n\n{args.description}\n\nFree notes about this run.\n")

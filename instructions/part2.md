@@ -4,13 +4,16 @@
 
 Due **8:00am Tuesday, October 27**. The overall instructions are in the [README](../README.md).
 
+This part builds on [Part 1](part1.md): you'll train the model and run the same evaluations
+again, comparing against your base-model run.
+
 ## Step 1: Pick your famous person
 
-## Step 2: Write your two charters
+## Step 2: Write your two constitutions
 
 ## Step 3: Write two test families of your own
 
-## Step 4: Map your charters to your tests
+## Step 4: Map your constitutions to your tests
 
 ## Step 5: Write your predictions
 

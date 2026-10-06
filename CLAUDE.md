@@ -12,17 +12,21 @@ to students too.
 
 ## Start of a session
 
-- Run `git log --oneline`. No `Name and date` commit means run the `setup` skill before
-  anything else. Otherwise the current part is the one after the highest `Part N done`, and the
-  current step is the first step of that part whose slot in `WRITEUP.md` is still `XXXX`. Say
-  in one line where they are.
+- Run `git log --oneline`. No commit whose whole subject is exactly `Name and date` means run
+  the `setup` skill before anything else. Otherwise the current part is the one after the
+  highest commit whose whole subject is exactly `Part N done` (Part 0 if there is none), and
+  the current step is the first step of that part whose slot in `WRITEUP.md` is still `XXXX`.
+  Say in one line where they are. Match the whole subject, because template commits may
+  mention these phrases and must not count.
 - Read `WRITEUP.md` in full, with the Read tool, at the start of every session, before you write
   into any slot, and at every checkpoint.
-- Check for template changes. At the start of every session, and again about every five turns
-  or thirty minutes, run `git fetch upstream` and `git log --oneline HEAD..upstream/main`. If it
-  lists commits, show their subjects in one line and ask whether to merge them. On a yes, run
-  `git merge upstream/main`; where the merge touches a file they have written, show the diff and
-  let them decide. If the fetch fails, say so once and go on.
+- Check for template changes once the `upstream` remote exists (the `setup` skill adds it), but
+  not while the `setup` skill is in the middle of a step. At the start of every session, and
+  again about every five turns or thirty minutes, run `git fetch upstream` and
+  `git log --oneline HEAD..upstream/main`. If it lists commits, show their subjects in one line
+  and ask whether to merge them. On a yes, run `git merge upstream/main`; where the merge
+  touches a file they have written, show the diff and let them decide. If the fetch fails, say
+  so once and go on.
 
 ## How to talk
 
@@ -32,6 +36,24 @@ to students too.
   reporting results they asked for.
 - One ask at a time, at the end of the turn.
 - Say what you did, what the file now says, and what you need next.
+
+## Restarting Claude Code
+
+Some steps need Claude Code restarted: after installing the Colab server's packages, after
+`claude mcp reset-project-choices`, or when a tool or agent is missing. Once they type `/exit`
+they can't see anything you say, so put everything in one message, in this order:
+
+1. Why a restart is needed, in one line.
+2. "When you come back:", then each thing they type, in the order they type it:
+   - any command to run first, such as `claude mcp reset-project-choices`;
+   - open a new terminal window, if you just installed `uv`;
+   - `cd "<full path of this repository>" && claude`, with the real path from `pwd`;
+   - approve the `cool-colab-mcp` server if asked;
+   - type `/resume`, pick this conversation, then type `back`.
+3. As the last line: "Now type `/exit`."
+
+When they come back, check that the restart did its job (for example, that the Colab tools are
+there) and carry on from the step you were on. Don't redo the start-of-session checks.
 
 ## Writing in `WRITEUP.md`
 
@@ -51,10 +73,13 @@ write their answer in, show the slot as it now reads, and stop.
 - Explaining a concept is always fine, as often as they ask: MCP, tokens, layers, SFT, DPO, how
   the grader works. The answer in the slot is still theirs.
 
-## Step 0 and Part 1 rules
+## Part 0 and Part 1 rules
 
-- **Step 0, the MCP paragraph.** Explain MCP as much as they ask, but the paragraph is theirs
-  (the writing rules above apply).
+- **Part 0, the MCP answers (Steps B and D).** Explain what an MCP server is as much as they
+  ask (Step B), but the paragraph and the answers are theirs (the writing rules above apply).
+  How this connection works is Step D's question. Until their Step D answer is in, explain
+  only what you need to fix a problem. If they ask how the connection works, say that it is
+  Step D's question and ask for their guess first.
 
 - **Step 1, reading about the model.** Let them find the facts on the page. Check them once
   they give them. The prediction about how it will answer is theirs: don't hint at what the
@@ -100,5 +125,5 @@ write their answer in, show the slot as it now reads, and stop.
   `.claude/agents/` and `.claude/skills/`. Say what you would change and why instead.
 - At the end of each part, run the `checkpoint` skill.
 
-<!-- [TBD: Part 2 rules: charters, the student's own test families, predictions, the blind
+<!-- [TBD: Part 2 rules: constitutions, the student's own test families, predictions, the blind
 labels, the audit and the write-up. Draft with Shilad.] -->

@@ -10,7 +10,7 @@ for `facts` and `user_says_something_wrong`, and up to 200 new tokens for `emoti
 (At 120 tokens most emotional messages were cut off mid-sentence, which would bias the
 side-by-side ratings.)
 
-| File | Family | Items | What it checks | Part of the charter | Scoring | Predicted winner |
+| File | Family | Items | What it checks | Part of the constitution | Scoring | Predicted winner |
 |---|---|---|---|---|---|---|
 | `facts.jsonl` | Short facts | 120 | Gets a simple fact right | Shared core: be truthful | Claude grades correct or not | Succinct |
 | `user_says_something_wrong.jsonl` | User says something wrong | 80 | Corrects a false claim instead of going along with it | Shared core: correct false claims | Claude grades with a 0/1/2 rubric | Succinct |
@@ -26,7 +26,7 @@ whether they hold.
 
 **Held-back items.** The instructor also has more items of the same three kinds that are
 not in this folder. They will be run on everyone's models at the end of the assignment, so
-that nobody can tune their charter to the visible items. Do not train on these prompts; use
+that nobody can tune their constitution to the visible items. Do not train on these prompts; use
 them only for testing.
 
 **How responses are graded.** Claude grades every response in all three families, inside

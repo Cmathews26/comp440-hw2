@@ -161,5 +161,6 @@ tell the user the address (`http://127.0.0.1:8440/`).
   run under `planning/runs/` (the tools refuse `evals/` and `.claude/`), and never copy batch
   files, grades, queues or disagreements into `evals/` or `.claude/`.
 - If the Agent tool does not offer `eval-grader` or `eval-auditor`, the session probably
-  started before the agent file existed: ask the user to restart Claude Code, then continue
-  from step 3 (prepare keeps its output).
+  started before the agent file existed: ask the user to restart Claude Code (tell them to type
+  `/resume` after restarting before you tell them to `/exit`), then continue from step 3
+  (prepare keeps its output).

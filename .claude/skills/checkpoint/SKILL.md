@@ -6,7 +6,8 @@ description: The end-of-part ritual for HW2. Run it at the end of every part and
 Five steps, in this order, every time. Stop at the first thing missing: that is the current step,
 and the part is not done until it is filled.
 
-1. Check the part's run folder. For Part 1: a folder under `evals/runs/` with a response file for
+1. Check the part's run folder. Part 0 has no run folder, so skip this step for Part 0. For
+   Part 1: a folder under `evals/runs/` with a response file for
    the base model and a Sonnet grades folder, and `status` in its `run.json` at `graded` or
    later. Show what you found in one line each. Do not say whether the numbers look right.
 2. Read `WRITEUP.md` in full and name, one line each, every slot in **this part's section** that

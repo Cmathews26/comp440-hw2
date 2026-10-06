@@ -37,7 +37,7 @@ made, then a few lowercase words chosen by Claude.
 | `title` | a plain-language title |
 | `description` | plain language, written by Claude: which models, why, and what was learned so far |
 | `created`, `updated` | times (UTC) |
-| `models` | list of `{id, label, description, charter}`: `id` matches `responses/<id>.jsonl`; `description` says how the model was trained; `charter` names the charter or labeling rule behind it. Optional `stands_for` (`succinct` or `persona`) links a model to the items' predicted winners. |
+| `models` | list of `{id, label, description, charter}`: `id` matches `responses/<id>.jsonl`; `description` says how the model was trained; `charter` names the constitution or labeling rule behind it. Optional `stands_for` (`succinct` or `persona`) links a model to the items' predicted winners. |
 | `item_sets` | the item folders used, each `{path, items, held_back, files: [{file, families, items, held_back}]}` (paths from the repo root) |
 | `includes_held_back` | true if any response is to a held-back item |
 | `generation` | how the responses were made: prompt template, `max_new_tokens` per family, how many hit the length limit, notes |

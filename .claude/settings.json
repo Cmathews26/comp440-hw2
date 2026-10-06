@@ -13,7 +13,16 @@
       "Bash(python3 dump_transcript.py)",
       "Bash(python3 evals/app/serve.py:*)",
       "Bash(git merge:*)",
-      "Bash(python3 evals/shared/grade_tools.py:*)"
+      "Bash(python3 evals/shared/grade_tools.py:*)",
+      "Bash(uv sync --frozen --directory tools/cool-colab-mcp)",
+      "Bash(uv --version)",
+      "Bash(claude mcp get cool-colab-mcp)",
+      "mcp__cool-colab-mcp__register_notebook",
+      "mcp__cool-colab-mcp__open_notebook",
+      "mcp__cool-colab-mcp__get_runtime_status",
+      "mcp__cool-colab-mcp__get_notebook_status",
+      "mcp__cool-colab-mcp__list_notebooks",
+      "mcp__cool-colab-mcp__get_cells"
     ]
   }
 }

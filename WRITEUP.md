@@ -3,9 +3,17 @@
 **Name:** XXXX
 **Date:** XXXX
 
-## Step 0: Set up
+## Part 0: Set up
 
-### What an MCP server is and why it's useful
+### Step B: What an MCP server is and why it's useful
+
+XXXX
+
+### Step B: Why not paste code into Colab yourself
+
+XXXX
+
+### Step D: How the MCP server connects Claude Code to Colab
 
 XXXX
 
