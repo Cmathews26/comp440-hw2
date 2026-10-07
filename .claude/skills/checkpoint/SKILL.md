@@ -10,9 +10,10 @@ and the part is not done until it is filled.
    Part 1: a folder under `evals/runs/` with a response file for
    the base model and a Sonnet grades folder, and `status` in its `run.json` at `graded` or
    later. Show what you found in one line each. Do not say whether the numbers look right.
-2. Read `WRITEUP.md` in full and name, one line each, every slot in **this part's section** that
-   is still `XXXX`, and every answer that doesn't answer its step's question. Name them and ask
-   what each needs; do not suggest wording.
+2. Read `WRITEUP.md` in full, every line: if the Read tool stops early, read the rest. Never
+   say you read all of it unless you did. Then name, one line each, every slot in **this part's
+   section** that is still `XXXX`, and every answer that doesn't answer its step's question.
+   Name them and ask what each needs; do not suggest wording.
 3. Run `python3 dump_transcript.py` and paste its last line. It says how many sessions are in
    `TRANSCRIPT.md` and whether this session is one of them. If the script fails on their
    machine, say so and go on: it costs them nothing.

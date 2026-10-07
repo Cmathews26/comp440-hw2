@@ -26,8 +26,8 @@ say about it.
 
 - Open the model's [Hugging Face page](https://huggingface.co/Qwen/Qwen3-0.6B-Base) and read the
   "Model Overview" and the highlights above it.
-- Find the number of parameters, the number of layers, and how much text the model was trained
-  on, in how many languages.
+- Find the total number of parameters, the number of layers, and how much text the Qwen3 models
+  were trained on, in how many languages.
 
 > [!IMPORTANT]
 > **Questions:** The page says the model's "Training Stage" is "Pretraining". What do you expect it to
@@ -66,7 +66,8 @@ top_next_tokens("Question: Which city is the capital of Canada?\nAnswer:")
 0.028  ' Toronto'
 ```
 
-- Ask Claude to run it two more times with prompts you change: drop `Answer:`, and then write
+- Ask Claude to run it two more times with prompts you change: drop `\nAnswer:`, so the prompt
+  ends at the question mark ("Question: Which city is the capital of Canada?"), and then write
   the question as the start of a sentence ("The capital of Canada is").
 - Hint: the spaces at the start of tokens like `' Ottawa'` are part of the token.
 
@@ -132,10 +133,10 @@ so you know where each piece lives and who did what.
   - the same question in the viewer.
 - Draw a diagram of the path the question took: from the item file, to Colab, to the model's
   answer, to the zip file you downloaded, to the run folder, to Claude's grade, to the viewer.
-- Label each box with where it ran: your laptop or Google's computer. Mark each step that Claude
-  Code did for you.
+- Label each box with where it ran: your laptop, Google's computer or Anthropic's computers.
+  Mark each step that Claude Code did for you.
 - Hints:
-  - Hand-drawn and photographed is fine.
+  - Hand-drawn and photographed is fine. So is a diagram typed into `WRITEUP.md`.
   - `evals/runs/README.md` describes the run folder. The grading rules are in `.claude/agents/`.
   - Ask Claude Code to explain any step you can't place. Then check its answer against the
     files.
@@ -148,10 +149,11 @@ so you know where each piece lives and who did what.
 
 Every grader makes mistakes, Claude included. In this step you'll measure how often.
 
-- Ask Claude Code to pick 10 graded answers at random from the short facts and the "user says
-  something wrong" sets, and to show you only the question and the answer, not the grade. Leave
-  out the emotional and social set for now: its main test compares two models side by side, and
-  you only have one so far.
+- Ask Claude Code to pick 10 graded answers at random, 5 from the short facts set and 5 from the
+  "user says something wrong" set, and to show you only the question, the answer the grader
+  was given as correct, and the model's answer, not the grade. Leave out the emotional and
+  social set for now: its main test compares two models side by side, and you only have one so
+  far.
 - Grade each one yourself and write your grades down.
 - Then ask Claude to show its grades.
 - Hint: grading before you see Claude's grade matters. Once you have seen it, it is hard not to
@@ -159,6 +161,7 @@ Every grader makes mistakes, Claude included. In this step you'll measure how of
 
 > [!IMPORTANT]
 > **Questions:** How many of the 10 did you agree on? For one disagreement, who was right, and why?
+> If you agreed on all 10, pick the one you were least sure of, and say what made it hard to grade.
 
 ## Step 8: Find three surprising answers
 
@@ -187,11 +190,11 @@ Submit your repository URL through the
 ## Grading rubric
 
 - Trace: [TBD]% - Every file in Step 6 is the right one. Every step in your diagram is placed on
-  your laptop or Google's computer, and the steps Claude did are marked.
+  your laptop, Google's computer or Anthropic's computers, and the steps Claude did are marked.
 - Model and grading: [TBD]% - The facts you found in Step 1 are right, and the grades in Step 3
   come with reasons.
 - Checking Claude: [TBD]% - Your 10 grades were made before you saw Claude's, and you explain
-  one disagreement.
+  one disagreement (or, if you agreed on all 10, the one you were least sure of).
 - Interpretation: [TBD]% - Your answers to the questions in Steps 2, 4 and 8 are your own reading
   of what you saw, and the surprising answers come with your own explanation of where they came
   from.

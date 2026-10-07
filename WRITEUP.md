@@ -41,7 +41,7 @@ XXXX
 
 ### Step 6: One question traced, and your diagram
 
-XXXX (add the diagram image to the repository and link it here)
+XXXX (type the diagram here, or add an image of it to the repository and link it here)
 
 ### Step 7: Your 10 grades and Claude's
 
