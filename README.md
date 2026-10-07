@@ -45,7 +45,8 @@ the class's [AI-use norms](https://docs.google.com/document/d/1Eb6qxeS2wy-9TBzL8
 
 ## Troubleshooting
 
-- **Claude says it has no Colab tools.** You probably skipped the approval in [Part 0](instructions/part0.md). Type
+- **Claude says it has no Colab tools.** You probably declined the server when Claude Code asked
+  about it in [Part 0](instructions/part0.md). Pressing Enter at that question declines it. Type
   `/exit`, run `claude mcp reset-project-choices` in the repository's folder, start `claude`
   again and approve the server this time. Then type `/resume`, pick your conversation and type
   `back`.

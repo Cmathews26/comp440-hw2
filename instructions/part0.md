@@ -26,7 +26,9 @@ Claude installs everything else, including `uv`, a Python package manager, if yo
 
 - Fork Shilad's [hw2 repo](https://github.com/shilad/comp440-hw2), then clone your fork.
 - In a terminal, go to the repository's folder and start Claude Code with `claude`.
-- Claude Code will ask whether to use the `cool-colab-mcp` server. **Approve it.**
+- Claude Code will ask whether to use the `cool-colab-mcp` server. Choose **Use this MCP
+  server**. Don't just press Enter: the question starts on "Continue without using this MCP
+  server", which turns the server off.
 - If you skip or decline it, Claude has no Colab tools. To fix it, type `/exit`, run
   `claude mcp reset-project-choices` in the repository's folder, start `claude` again and
   approve the server this time. Then type `/resume`, pick your conversation and type `back`.
