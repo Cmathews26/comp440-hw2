@@ -1,17 +1,17 @@
 # COMP 440 HW2: Whose Preferences Count?
 
-**Name:** XXXX
-**Date:** XXXX
+**Name:** Colin Mathews
+**Date:** October 8, 2026
 
 ## Part 0: Set up
 
 ### Step B: What an MCP server is and why it's useful
 
-XXXX
+An MCP server is a method that helps Claude and other LLMs connect to external tools and databases seamlessly. In the past, connecting multiple AI models to external sources was an extremely complex problem, but MCP is meant to act as a sort of "universal port" for AI access. An example outside of Colab is the SQLite server, which lets a model inspect databases and run queries.
 
 ### Step B: Why not paste code into Colab yourself
 
-XXXX
+If you paste code into Colab yourself, you have to copy and paste again every time you want to make a change or debug. Claude also can't see any of your data, so it can only work from your description of the dataframe or the environment.
 
 ### Step D: How the MCP server connects Claude Code to Colab
 
