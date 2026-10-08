@@ -15,7 +15,7 @@ If you paste code into Colab yourself, you have to copy and paste again every ti
 
 ### Step D: How the MCP server connects Claude Code to Colab
 
-XXXX
+When Claude connects to the MCP server, the server tells Claude which tools it has access to that work with Google's computer. Claude sends a request through the server to Google, and Google returns the results or output to the MCP server. Claude can then work with those results without ever interacting directly with Google's machine.
 
 ## Part 1: The tools and the tests
 
